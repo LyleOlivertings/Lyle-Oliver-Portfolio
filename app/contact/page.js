@@ -55,7 +55,7 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <MapPinIcon className="h-8 w-8 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Location</h3>
+                  <h3 className="text-xl text-gray-400 font-semibold mb-2">Location</h3>
                   <p className="text-gray-600">
                     Cape Town, South Africa<br />
                     Available for remote work worldwide
@@ -66,7 +66,7 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <EnvelopeIcon className="h-8 w-8 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Email</h3>
+                  <h3 className="text-xl text-gray-400 font-semibold mb-2">Email</h3>
                   <p className="text-gray-600">
                     <a href="mailto:oliverlyle29@gmail.com" className="hover:text-blue-600 transition">
                       oliverlyle29@gmail.com
@@ -78,7 +78,7 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <PhoneIcon className="h-8 w-8 text-blue-600 mt-1" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Phone</h3>
+                  <h3 className="text-xl font-semibold text-gray-400 mb-2">Phone</h3>
                   <p className="text-gray-600">
                     <a href="tel:+27652845981" className="hover:text-blue-600 transition">
                       +27 65 284 5981
@@ -88,7 +88,7 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8">
-                <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
+                <h3 className="text-xl font-semibold mb-4 text-gray-400">Connect With Me</h3>
                 <div className="flex space-x-6">
                   <a href="https://github.com/LyleOlivertings" target="_blank" rel="noopener" className="text-gray-600 hover:text-blue-600 transition">
                     <span className="sr-only">GitHub</span>

@@ -1,7 +1,8 @@
 // src/components/Navbar.jsx
 'use client';
 import { useState, useEffect } from 'react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+
+import { BarsArrowDownIcon, MinusCircleIcon } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +41,9 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <XIcon className="h-6 w-6" />
+              <MinusCircleIcon className="h-6 w-6" />
             ) : (
-              <MenuIcon className="h-6 w-6" />
+              <BarsArrowDownIcon className="h-6 w-6" />
             )}
           </button>
         </div>
