@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SkillsSection />
+    
 
       {/* Projects Section */}
       <main className="flex-1 bg-white">
@@ -124,6 +124,8 @@ export default function Home() {
           )}
         </div>
       </main>
+
+      <SkillsSection />
 
       <Footer />
     </div>
