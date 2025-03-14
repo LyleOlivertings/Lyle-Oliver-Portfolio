@@ -103,7 +103,7 @@ export default function Home() {
       {/* Projects Section */}
       <main className="flex-1 bg-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-gray-600 mb-12">
             Latest Projects
           </h2>
 
