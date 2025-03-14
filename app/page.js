@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
+import { SkillsSection } from '@/components/SkillsSection';
 
 async function getGitHubRepos() {
   try {
@@ -96,6 +97,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SkillsSection />
 
       {/* Projects Section */}
       <main className="flex-1 bg-white">
