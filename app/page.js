@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProjectCard from '../components/ProjectCard';
 import { SkillsSection } from '@/components/SkillsSection';
@@ -37,7 +36,6 @@ function processRepos(repos) {
   }));
 }
 
-
 export default function Home() {
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -47,17 +45,12 @@ export default function Home() {
     const loadProjects = async () => {
       try {
         const repos = await getGitHubRepos();
-        
-        // Sort repositories by last pushed date (newest first)
         const sortedRepos = repos.sort((a, b) => {
           const dateA = a.pushed_at ? new Date(a.pushed_at) : new Date(0);
           const dateB = b.pushed_at ? new Date(b.pushed_at) : new Date(0);
           return dateB - dateA;
         });
-
-        // Take first 5 repositories
         const latestRepos = sortedRepos.slice(0, 3);
-        
         const processed = processRepos(latestRepos);
         setProjects(processed);
       } catch (err) {
@@ -70,9 +63,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
+    <>
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-6xl mx-auto">
@@ -98,10 +89,8 @@ export default function Home() {
         </div>
       </section>
 
-    
-
       {/* Projects Section */}
-      <main className="flex-1 bg-white">
+      <section className="bg-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <h2 className="text-3xl font-bold text-center text-gray-600 mb-12">
             Latest Projects
@@ -123,11 +112,11 @@ export default function Home() {
             </div>
           )}
         </div>
-      </main>
+      </section>
 
       <SkillsSection />
 
       <Footer />
-    </div>
+    </>
   );
 }

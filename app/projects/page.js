@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ProjectCard from '../../components/ProjectCard';
 
@@ -59,34 +58,28 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <>
+      <h1 className="text-4xl font-bold text-center mb-12">
+        All Projects ({projects.length})
+      </h1>
 
-      <main className="flex-1 bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-          <h1 className="text-4xl font-bold text-center mb-12">
-            All Projects ({projects.length})
-          </h1>
-
-          {isLoading ? (
-            <div className="text-center py-12">
-              <div className="animate-spin inline-block w-8 h-8 border-[3px] border-current border-t-transparent rounded-full" />
-            </div>
-          ) : error ? (
-            <div className="text-center text-red-500 py-12">
-              Error loading projects. Please try again later.
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map(project => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          )}
+      {isLoading ? (
+        <div className="text-center py-12">
+          <div className="animate-spin inline-block w-8 h-8 border-[3px] border-current border-t-transparent rounded-full" />
         </div>
-      </main>
+      ) : error ? (
+        <div className="text-center text-red-500 py-12">
+          Error loading projects. Please try again later.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map(project => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      )}
 
       <Footer />
-    </div>
+    </>
   );
 }
